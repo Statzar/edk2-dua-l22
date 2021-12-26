@@ -3,8 +3,6 @@
 #if throw error then exit
 set -e
 
-figlet Edk2-dua-l22 
-
 echo [BuildTools] Cleanning BuidFiles
 
 echo [BuildTools] Now Cleanning Workspace
@@ -44,7 +42,6 @@ echo [BuildTools] Done.
 
 echo [BuildTools] Now Making boot.img
 gzip -c < workspace/Build/dua-l22Pkg/DEBUG_GCC5/FV/DUAL22PKG_UEFI.fd >uefi_img
-cat dipper.dtb >>uefi_img
 # build Abooting Img
 abootimg --create boot.img -k uefi_img -r ramdisk -f bootimg.cfg
 rm -rf ./uefi_img
