@@ -1,5 +1,5 @@
 [Defines]
-  PLATFORM_NAME                  = dua-l22Pkg
+  PLATFORM_NAME                  = DuraPkg
   PLATFORM_GUID                  = 28f1a3bf-193a-47e3-a7b9-5a435eaab2ee
   PLATFORM_VERSION               = 0.1
   DSC_SPECIFICATION              = 0x00010019
@@ -7,15 +7,15 @@
   SUPPORTED_ARCHITECTURES        = AARCH64
   BUILD_TARGETS                  = DEBUG|RELEASE
   SKUID_IDENTIFIER               = DEFAULT
-  FLASH_DEFINITION               = dua-l22Pkg/Devices/dua-l22.fdf
+  FLASH_DEFINITION               = DuraPkg/Devices/Dura.fdf
 
-!include dua-l22Pkg/DuraPkg.dsc
+!include DuraPkg/DuraPkg.dsc
 
 [BuildOptions.common]
   GCC:*_*_AARCH64_CC_FLAGS = -DXIAOMI_PIL_FIXED=1 -DDISPLAY_DPI=360 -DENABLE_SIMPLE_INIT
 
 [PcdsFixedAtBuild.common]
-  # System Memory (2GB)
+  # System Memory (1,8GB)
   gArmTokenSpaceGuid.PcdSystemMemorySize|0x15AE00000
 
   gsdm845PkgTokenSpaceGuid.PcdMipiFrameBufferWidth|720
